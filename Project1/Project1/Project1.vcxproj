@@ -132,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <MASM Include="asemblacja.asm" />
+    <MASM Include="xmm.asm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

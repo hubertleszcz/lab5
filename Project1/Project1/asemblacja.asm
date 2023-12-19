@@ -12,6 +12,8 @@ public _nowy_exp
 	mov ebp, esp
 	mov ecx, 20
 
+
+
 	;od konca licze potegi na koproc
 	;potem silnie
 	;dziele
