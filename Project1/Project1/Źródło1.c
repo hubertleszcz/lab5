@@ -5,7 +5,10 @@ float nowy_exp(float x);
 
 int main() {
 	unsigned int n = 6;
-	float tab[] = { 200.00,1000.0, 100.5, 300.00, 400.5, 110.2 };
-	float result = srednia_harm(tab, n);
-	printf("%f", result);
+	//float tab[] = { 200.00,1000.0, 100.5, 300.00, 400.5, 110.2 };
+	//float result = srednia_harm(tab, n);
+	//printf("%f", result);
+	float exp = 2.00;
+	float wynik = nowy_exp(exp);
+	printf("%f", wynik);
 }

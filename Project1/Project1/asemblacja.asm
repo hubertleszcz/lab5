@@ -8,10 +8,48 @@ public _nowy_exp
 	suma dd 0
 .code
 	_nowy_exp PROC
+	push ebp
+	mov ebp, esp
+	mov ecx, 20
 
+	;od konca licze potegi na koproc
+	;potem silnie
+	;dziele
+	;dodaje
+	
+	fild dword ptr suma
 
+	petla:		
+		mov edx, 1
+		
+		cmp ecx, 1
+		je koniec
+		fld dword ptr [ebp+8]
+		kolejna_potega:
+			fld dword ptr [ebp+8]
+			fmulp st(1), st(0)
+			inc edx
+		cmp edx, ecx
+		jb kolejna_potega
+		mov edx, 1
+		fld1
+		silnia: push edx
+			fild dword ptr [esp]
+			add esp,4
+			fmulp st(1), st(0)
+			inc edx
+		cmp edx, ecx
+		jbe silnia
+		fdivp st(1), st(0)
+		faddp st(1), st(0)
+	loop petla
 
+	koniec:
+		fld1
+		faddp st(1), st(0)
+		fadd dword ptr [ebp+8]
 
+	pop ebp
 	ret
 	_nowy_exp ENDP
 	_srednia_harm PROC
